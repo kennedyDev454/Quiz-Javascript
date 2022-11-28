@@ -34,12 +34,11 @@ const animateScore = () =>{
 form.addEventListener("submit", event => {
   event.preventDefault();
 
- const userAnswers = [
-    form.inputQuestion1.value,
-    form.inputQuestion2.value,
-    form.inputQuestion3.value,
-    form.inputQuestion4.value,
- ]
+  const userAnswers = []
+
+  correctQuestions.forEach((__,index) => {
+    userAnswers.push(form[`inputQuestion${index + 1}`].value)
+  })
   
   score = 0
 
@@ -50,9 +49,5 @@ form.addEventListener("submit", event => {
   animateScore()
 
 });
-
-
-
-
 
 
